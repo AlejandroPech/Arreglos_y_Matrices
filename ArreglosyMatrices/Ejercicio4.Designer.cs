@@ -38,6 +38,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ejercicio4";
             this.Text = "Ejercicio4";
+            this.Load += new System.EventHandler(this.Ejercicio4_Load);
             this.ResumeLayout(false);
 
         }
