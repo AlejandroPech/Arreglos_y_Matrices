@@ -36,16 +36,17 @@
             // 
             // txtTamañoM
             // 
-            this.txtTamañoM.Location = new System.Drawing.Point(50, 55);
+            this.txtTamañoM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTamañoM.Location = new System.Drawing.Point(53, 61);
             this.txtTamañoM.Name = "txtTamañoM";
-            this.txtTamañoM.Size = new System.Drawing.Size(115, 20);
+            this.txtTamañoM.Size = new System.Drawing.Size(115, 26);
             this.txtTamañoM.TabIndex = 0;
             // 
             // btnTamañoM
             // 
-            this.btnTamañoM.Location = new System.Drawing.Point(172, 55);
+            this.btnTamañoM.Location = new System.Drawing.Point(174, 62);
             this.btnTamañoM.Name = "btnTamañoM";
-            this.btnTamañoM.Size = new System.Drawing.Size(82, 19);
+            this.btnTamañoM.Size = new System.Drawing.Size(82, 26);
             this.btnTamañoM.TabIndex = 1;
             this.btnTamañoM.Text = "Aceptar";
             this.btnTamañoM.UseVisualStyleBackColor = true;
@@ -54,17 +55,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(49, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 13);
+            this.label1.Size = new System.Drawing.Size(200, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "numero de columnas y filas";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(306, 114);
+            this.richTextBox1.Location = new System.Drawing.Point(306, 62);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(465, 274);
+            this.richTextBox1.Size = new System.Drawing.Size(465, 326);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArreglosyMatrices.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,23 @@ namespace ArreglosyMatrices
         {
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE);
+            richTextBox1.Enabled = false;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DiagonalUnos diagonalUnos = new DiagonalUnos(Int32.Parse(txtNumD.Text.Trim()));
+                if (Int32.Parse(txtNumD.Text.Trim()) <= 10 && Int32.Parse(txtNumD.Text.Trim()) > 0)
+                    richTextBox1.Text = diagonalUnos.GetDiagonal();
+                else
+                    MessageBox.Show("Este numero es muy grande o muy pequño");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -32,6 +32,7 @@ namespace ArreglosyMatrices
         {
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE);
+            richTextBox1.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

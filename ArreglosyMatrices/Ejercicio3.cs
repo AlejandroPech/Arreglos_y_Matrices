@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArreglosyMatrices.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,59 +31,65 @@ namespace ArreglosyMatrices
         private void Ejercicio3_Load(object sender, EventArgs e)
         {
             var handle = GetConsoleWindow();
-
-
             // Show
-            ShowWindow(handle, SW_SHOW);
-                
+            ShowWindow(handle, SW_SHOW);                
             Console.Clear();
-            string[,] matriz = new string[3, 3]
-            {
-                {"Valor1","Valor2","Valor3" },
-                {"Valor4","Valor5","Valor6" },
-                {"Valor7","Valor8","Valor9" }
-            };
-            EscribirArreglo(matriz);
-            richTextBox.Size = new Size(200, 200);
-            richTextBox.Location = new Point(435, 181);
-            richTextBox.Visible = true;
-            Console.WriteLine("Hola");
-            if (string.IsNullOrEmpty(textBox1.Text))
-                button1.Enabled = false;
-
+            ObtenerResultados();
         }
 
-        public void EscribirArreglo(string[,] matriz)
+        private void ObtenerResultados()
         {
-            
-            var filas = matriz.GetLength(0);
-            var columnas = matriz.GetLength(1);
-            var sb = new StringBuilder();
-            var tmpFila = new string[matriz.GetLength(0)];
-            for(int i = 0; i < filas; i++)
+            MatrizOperariones matrizOperariones = new MatrizOperariones();
+            double summ1;
+            double summ2;
+            for(int i = 0; i < 2; i++)
             {
-                for(int j=0;j < columnas; j++)
+                for (int j = 0; j < 2; j++)
                 {
-                    tmpFila[j] = matriz[i, j];
-                }
-                sb.AppendLine(string.Join("\t", tmpFila));
-                sb.AppendLine("");
+                    Console.WriteLine($"Escribe el numero del indice [{i} , {j}] de la matriz 1");
+                    try
+                    {
+                        summ1 = Convert.ToDouble(Console.ReadLine());
+                        matrizOperariones.Matriz1[i, j] = summ1;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Solo se aceptan numeros o el numero es invalido");
+                        j--;
+                    }                   
+                }             
+
             }
-            
-            richTextBox.Text = sb.ToString();
-        }
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {                   
+                    Console.WriteLine($"Escribe el numero del indice [{i} , {j}] de la matriz 2");
+                    try
+                    {
+                        summ2 = Convert.ToDouble(Console.ReadLine());
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            RichTextBox richTextBox;            
-            richTextBox = new RichTextBox();
-            richTextBox.Parent = this;
-            richTextBox.Location = new Point(50, 50);
-            richTextBox.Size = new Size(100, 100);
-            richTextBox.BackColor = Color.White;
+                        matrizOperariones.Matriz2[i, j] = summ2;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Solo se aceptan numeros o el numero es invalido");
+                        j--;
+                    }
 
-            textBox1.Size = new Size(300, 20);
+                }
+
+            }
+            Console.WriteLine("La suma de las matrices es");
+            Console.WriteLine(matrizOperariones.GetSuma());
+            Console.WriteLine("La resta de las matrices es");
+            Console.WriteLine(matrizOperariones.GetResta());
+            Console.WriteLine("La multiplicación de la matriz es");
+            Console.WriteLine(matrizOperariones.GetMultiplicacion());
+            Console.WriteLine("La divición de la matriz es");
+            Console.WriteLine(matrizOperariones.GetDivicion());
         }
+        
+
     }
 }

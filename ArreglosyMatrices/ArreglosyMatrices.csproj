@@ -58,7 +58,10 @@
     <Compile Include="Arreglos_Matrices.Designer.cs">
       <DependentUpon>Arreglos_Matrices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\CerosporColumna.cs" />
     <Compile Include="Clases\CuadroMagico.cs" />
+    <Compile Include="Clases\DiagonalUnos.cs" />
+    <Compile Include="Clases\MatrizOperariones.cs" />
     <Compile Include="Ejercicio1.cs">
       <SubType>Form</SubType>
     </Compile>
