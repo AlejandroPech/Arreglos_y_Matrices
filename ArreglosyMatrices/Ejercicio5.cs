@@ -16,5 +16,27 @@ namespace ArreglosyMatrices
         {
             InitializeComponent();
         }
+
+        public void showmatriz(int[,] matriz)
+        {
+            foreach(int i in matriz)
+            {
+                label1.Text = i.ToString();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int[,] matriz = new int[5, 10];
+            Random numeros = new Random();
+            for (int i=0; i<matriz.Length; i++)
+            {
+                for (int j=0; j<matriz.Length; j++)
+                {
+                    matriz[i, j] = numeros.Next(0,10);
+                }
+            }
+            showmatriz(matriz);
+        }
     }
 }
