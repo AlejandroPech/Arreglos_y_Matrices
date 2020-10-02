@@ -64,6 +64,7 @@
     <Compile Include="Clases\DiagonalUnos.cs" />
     <Compile Include="Clases\MatrizAleatoria.cs" />
     <Compile Include="Clases\MatrizOperariones.cs" />
+    <Compile Include="Clases\VentasDelAnio.cs" />
     <Compile Include="Ejercicio1.cs">
       <SubType>Form</SubType>
     </Compile>
