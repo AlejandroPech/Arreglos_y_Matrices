@@ -12,16 +12,14 @@ namespace ArreglosyMatrices.Clases
         int[,] matriz = new int[5, 10];
         int[,] columnas = new int[2, 10];
         int[,] filas = new int[5, 2];
+        int con = 0;
+        int sumfil = 0;
 
         public MatrizAleatoria()
         {
         }
 
 
-        //public string Suma()
-        //{
-
-        //}
 
         public string CrearMatriz()
         {
@@ -43,43 +41,63 @@ namespace ArreglosyMatrices.Clases
                 sb.AppendLine(string.Join("\t", tmpFila));
                 sb.AppendLine("");
             }
-
+            Sumar();
             return sb.ToString();
 
         }
 
         public string SumarMatrizCol()
         {
-            var sb = new StringBuilder();
-            double[] tmpFila = new double[10];
+            string a = "";
             for (int i = 0; i < 2; i++)
             {
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < 10; j++)
                 {
-                    tmpFila[j] = filas[i, j];
+                    a += (" " + columnas[i, j]);
                 }
-                sb.AppendLine(string.Join("\t", tmpFila));
-                sb.AppendLine("");
+                a = a + "\n";
             }
+            return a;
 
-            return sb.ToString();
         }
 
         public string SumarMatrizFila()
         {
-            var sb = new StringBuilder();
-            double[] tmpFila = new double[2];
+            string a = "";
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    tmpFila[j] = filas[i, j];
+                    a += (" " + filas[i, j]);
                 }
-                sb.AppendLine(string.Join("\t", tmpFila));
-                sb.AppendLine("");
+                a = a + "\n";
             }
+            return a;
 
-            return sb.ToString();
+        }
+        public void Reiniciar()
+        {
+
+            sumfil = 0;
+            con = 0;
+        }
+
+        public void Sumar()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    sumfil += matriz[i, j];
+                    con++;
+                }
+                if (con == 10)
+                {
+                    filas[i, 0] = sumfil;
+                    filas[i, 1] = sumfil / 10;
+                    Reiniciar();
+                }
+            }
         }
     }
 }
