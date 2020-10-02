@@ -1,14 +1,8 @@
 ﻿using ArreglosyMatrices.Clases;
 using Microsoft.VisualBasic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArreglosyMatrices
@@ -44,16 +38,13 @@ namespace ArreglosyMatrices
         {
             try
             {
-
-                
-                
-
+                CrearMatriz();
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
             }
-            CrearMatriz();
+            
         }
 
 
@@ -69,8 +60,8 @@ namespace ArreglosyMatrices
             {
                 for (int j = 0; j < Int32.Parse(txtTamañoM.Text); j++)
                 {
-                    int textChild = Int32.Parse(Interaction.InputBox("Ingresa el valor deseado  " + i+" "+j, "Cuadro Magico"));
-                    if (textChild < 1 || textChild > (tamaño * tamaño))
+                    int numero = Int32.Parse(Interaction.InputBox("Ingresa el valor deseado  " + i+" "+j, "Cuadro Magico"));
+                    if (numero< 1 || numero > (tamaño * tamaño))
                     {
                         
                         j=j-1;
@@ -79,7 +70,7 @@ namespace ArreglosyMatrices
                     }
                     else
                     {
-                        cuadroMagico.Dimenciones[i,j]=textChild;
+                        cuadroMagico.Dimenciones[i,j]=numero;
 
                     }
                 }
