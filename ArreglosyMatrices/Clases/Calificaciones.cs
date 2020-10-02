@@ -16,29 +16,48 @@ namespace ArreglosyMatrices.Clases
 			 { 10, 9,9.2 }, { 5,10, 8.4 }, { 9,4.6, 7.5 }
 		};
 
-		public string MayorMenor()
-        {
-			double num = 0;
-			double numo = 99;
-			for(int i=0; i < matriz.Length; i++)
-            {
-				for(int j=0; j < 2; j++)
-                {
-					if (num < matriz[i, j])
-					{
-						num = matriz[i, j];
-					}
-                    else if(numo > matriz[i, j])
-                    {
-						numo = matriz[i, j];
-					}
+		public string Crear()
+		{
+
+			var sb = new StringBuilder();
+			double[] tmpFila = new double[3];
+			for (int i = 0; i < 12; i++)
+			{
+				for (int j = 0; j < 3 ; j++)
+				{
+					tmpFila[j] = matriz[i, j];
 				}
-                
+				sb.AppendLine(string.Join("\t", tmpFila));
+				sb.AppendLine("");
+			}
+
+			return sb.ToString();
+		}
+
+        public string MayorMenor()
+        {
+            double num = 0;
+            double numo = 99;
+            for (int i = 0; i < matriz.Length; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    if (num < matriz[i, j])
+                    {
+                        num = matriz[i, j];
+                    }
+                    else if (numo > matriz[i, j])
+                    {
+                        numo = matriz[i, j];
+                    }
+                }
+
             }
-			return num,numo;
+			return Convert.ToString(num);
+			
         }
 
-		public void Promedio()
+        public void Promedio()
         {
 			double sum = 0;
 			double prom = 0;
