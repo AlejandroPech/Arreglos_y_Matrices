@@ -34,38 +34,39 @@ namespace ArreglosyMatrices.Clases
 			return sb.ToString();
 		}
 
-        public string MayorMenor()
-        {
-            double num = 0;
-            double numo = 99;
-            for (int i = 0; i < matriz.Length; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    if (num < matriz[i, j])
-                    {
-                        num = matriz[i, j];
-                    }
-                    else if (numo > matriz[i, j])
-                    {
-                        numo = matriz[i, j];
-                    }
-                }
+   //     public string MayorMenor()
+   //     {
+   //         double num = 0;
+   //         double numo = 99;
+   //         for (int i = 0; i < matriz.Length; i++)
+   //         {
+   //             for (int j = 0; j < 2; j++)
+   //             {
+   //                 if (num < matriz[i, j])
+   //                 {
+   //                     num = matriz[i, j];
+   //                 }
+   //                 else if (numo > matriz[i, j])
+   //                 {
+   //                     numo = matriz[i, j];
+   //                 }
+   //             }
 
-            }
-			return Convert.ToString(num);
+   //         }
+			//return Convert.ToString(num);
 			
-        }
+   //     }
 
-        public void Promedio()
+        public string Promedio()
         {
+			StringBuilder sb = new StringBuilder();
 			double sum = 0;
 			double prom = 0;
-			double mi = 0;
+			double mi = 99;
 			double ma = 0;
-			for(int i = 0; i < matriz.Length; i++)
+			for(int i = 0; i < 12; i++)
             {
-				for(int j = 0; j < 2; j++)
+				for(int j = 0; j < 3; j++)
                 {
 					sum = matriz[i, j] + sum;
 
@@ -74,12 +75,17 @@ namespace ArreglosyMatrices.Clases
                 if (prom < mi)
                 {
 					mi = prom;
+					sum = 0;
                 }
 				else if (prom > ma)
                 {
 					ma = prom;
+					sum = 0;
                 }
+				sum = 0;
             }
+			sb.AppendLine($"El mayor promedio es {ma} y el menor es {mi}");
+			return sb.ToString();
         }
 	};
 

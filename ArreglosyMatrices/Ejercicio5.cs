@@ -33,7 +33,7 @@ namespace ArreglosyMatrices
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = matrizAleatoria.CrearMatriz();
-            richTextBox2.Text = matrizAleatoria.SumarMatrizCol();
+            richTextBox2.Text = matrizAleatoria.CrearMatriz();
             richTextBox3.Text = matrizAleatoria.SumarMatrizFila();
         }
     }

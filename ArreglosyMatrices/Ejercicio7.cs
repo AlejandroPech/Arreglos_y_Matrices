@@ -37,7 +37,7 @@ namespace ArreglosyMatrices
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = calificaciones.Crear();
-            label1.Text = calificaciones.MayorMenor();
+            label5.Text = calificaciones.Promedio();
         }
     }
 }
